@@ -1,0 +1,46 @@
+.answers-container{
+    display:flex;
+    padding:5px 30px;
+    color:white;
+}
+
+.answer-button{
+    background:purple;
+    font-family: "karla", sans-serif;
+    color:white;
+    border: solid 2px white;
+    border-radius:10px;
+    padding: 5px 10px;
+    margin-right: 20px;
+    font-size:20px;
+}
+
+.answer-button-selected{
+    background:green !important;
+    font-family: "karla", sans-serif;
+    color:white;
+    border: solid 2px white;
+    border-radius:10px;
+    padding: 5px 10px;
+    margin-right: 20px;
+    font-size:20px;
+}
+
+.wrong-answer{
+    background:red !important;
+    font-family: "karla", sans-serif;
+    color:white;
+    border: solid 2px white;
+    border-radius:10px;
+    padding: 5px 10px;
+    margin-right: 20px;
+    font-size:20px;
+}
+
+button:hover {
+    transform: scale(1.1);
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.3);
+    cursor: pointer;
+  }
+
+  
