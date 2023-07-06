@@ -14,7 +14,6 @@ export default function Quiz({URL, setMenu, numOfQuestions}){
     const [noQuestions, setNoQuestions] = useState(false)
 
     const fetchData = async() => {
-        console.log(URL)
         const {data} = await axios.get(URL)
         let q = []
         if(data.response_code === 1){
@@ -93,10 +92,9 @@ export default function Quiz({URL, setMenu, numOfQuestions}){
         setChecked(false)
     }
 
-    console.log(allQuestions)
     const questionElements = allQuestions.length > 0 ? allQuestions.map(question => {
-        return(<div key={nanoid} className="question-container">
-            <h4 key={nanoid} className="quiz-question">{decodeEntities(question.question)}</h4>
+        return(<div key={question.key} className="question-container">
+            <h4 className="quiz-question">{decodeEntities(question.question)}</h4>
             <Answers
                 key={question.key}
                 question={question}

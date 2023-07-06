@@ -1,22 +1,19 @@
-import React, {useState} from "react"
+import React from "react"
 import "../css/Menu.css"
 
 export default function Menu({numOfQuestions, setNumOfQuestions, category, setCategory, difficulty, setDifficulty, setMenu}){
     const handleNumOfQuestionsChange = (event) => {
-        if (event.target.value === ''  || !/\./.test(event.target.value) && (parseFloat(event.target.value) <= 20 && parseFloat(event.target.value) >=1)) {
+        if (event.target.value === ''  || !/\./.test(event.target.value) && (parseFloat(event.target.value) <= 20 && parseFloat(event.target.value) >= 1)) {
             setNumOfQuestions(event.target.value)
         }
-        console.log(numOfQuestions)
     }
     
     const handleCategoryChange = (event) => {
         setCategory(event.target.value)
-        console.log(category)
     }
 
     const handleDifficultyChange = (event) => {
         setDifficulty(event.target.value)
-        console.log(difficulty)
     }
 
     return(
@@ -42,6 +39,19 @@ export default function Menu({numOfQuestions, setNumOfQuestions, category, setCa
                         <select className="form-input-field" id="category" onChange={handleCategoryChange} value={category}>
                             <option value="">Any</option>
                             <option value="9">General Knowledge</option>
+                            <option value="27">Animals</option>
+                            <option value="25">Art</option>
+                            <option value="26">Celebrities</option>
+                            <option value="22">Geography</option>
+                            <option value="23">History</option>
+                            <option value="20">Mythology</option>
+                            <option value="24">Politics</option>
+                            <option value="17">Science & Nature</option>
+                            <option value="21">Sports</option>
+                            <option value="28">Vehicles</option>
+                            <option value="18">Science: Computers</option>
+                            <option value="19">Science: Mathematics</option>
+                            <option value="30">Science: Gadgets</option>
                             <option value="10">Entertainment: Books</option>
                             <option value="11">Entertainment: Film</option>
                             <option value="12">Entertainment: Music</option>
@@ -49,20 +59,7 @@ export default function Menu({numOfQuestions, setNumOfQuestions, category, setCa
                             <option value="14">Entertainment: Television</option>
                             <option value="15">Entertainment: Video Games</option>
                             <option value="16">Entertainment: Board Games</option>
-                            <option value="17">Science & Nature</option>
-                            <option value="18">Science: Computers</option>
-                            <option value="19">Science: Mathematics</option>
-                            <option value="20">Mythology</option>
-                            <option value="21">Sports</option>
-                            <option value="22">Geography</option>
-                            <option value="23">History</option>
-                            <option value="24">Politics</option>
-                            <option value="25">Art</option>
-                            <option value="26">Celebrities</option>
-                            <option value="27">Animals</option>
-                            <option value="28">Vehicles</option>
                             <option value="29">Entertainment: Comics</option>
-                            <option value="30">Science: Gadgets</option>
                             <option value="31">Entertainment: Japanese Anime & Manga</option>
                             <option value="32">Entertainment: Cartoon & Animations</option>
                         </select>

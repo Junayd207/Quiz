@@ -1,6 +1,7 @@
-import React, {useState, useEffect} from "react"
+import React, { useState } from "react"
+import { nanoid } from "nanoid"
 import "../css/Answers.css"
-import {nanoid} from "nanoid"
+
 
 export default function Answers(props){
     function shuffleArray(array){
@@ -10,7 +11,8 @@ export default function Answers(props){
         }
         return array
     }
-    const [answers, setAnswers] = useState(shuffleArray([props.question.correct_answer, ...props.question.incorrect_answers]))
+
+    const [answers, setAnswers] = useState(shuffleArray([props.question.correct_answer, ...props.question.incorrect_answers]));
     function handleClick(answer){
         if(props.question.checked){
             return
@@ -18,23 +20,19 @@ export default function Answers(props){
         if(props.checked === true){
             return
         }
-        props.handleClickAnswer(props.question.key, answer)
-        console.log(answer)
-        console.log(props.question.key)
+        props.handleClickAnswer(props.question.key, answer);
     }
-    //console.log(answers)
-    //console.log(props.question.selected)
 
     const answersElement = answers && answers.map(answer => {
         let className=""
-        if(!props.checked && answer == props.question.selected){
-            className="answer-button-selected"
+        if(!props.checked && answer === props.question.selected){
+            className="answer-button selected"
         }
-        else if(props.checked && answer == props.question.selected && answer != props.question.correct_answer){
-            className="wrong-answer"
+        else if(props.checked && answer === props.question.selected && answer !== props.question.correct_answer){
+            className="answer-button wrong"
         }
-        else if(props.checked && answer == props.question.correct_answer){
-            className="answer-button-selected"
+        else if(props.checked && answer === props.question.correct_answer){
+            className="answer-button selected"
         }
         else{
             className="answer-button"
@@ -48,7 +46,6 @@ export default function Answers(props){
             >{props.decoder(answer)}</button>
         )
     })
-
 
     return(
         <div className="answers-container" key={nanoid()}>

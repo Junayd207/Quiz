@@ -6,24 +6,24 @@
     background:#8671a5;
 }
 
-.question-container{
-    padding:0 70px;
-}
-
 .quiz-header-title{
-    padding:20px 100px;
+    margin:50px 0 50px 4vw;
     font-size:32px;
 }
 
 .quiz-header-return{
     color:white;
-    margin:10px 70px;
+    margin-right:4vw;
     padding: 8px 20px 10px;
     background: #381272;
     border: solid 2px white;
     border-radius:10px;
     font-size:20px;
     font-family: "karla", sans-serif;
+}
+
+.question-container{
+    padding:0 70px;
 }
 
 .quiz-question{
@@ -54,7 +54,6 @@ button:hover {
     transform: scale(1.1);
     box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.3);
     cursor: pointer;
-
 }
 
 .bottom-message{
@@ -76,4 +75,15 @@ button:hover {
     padding: 10px 20px;
     border-radius:15px;
     margin-top:80px;
+}
+
+@media (max-width: 768px) {
+    .question-container{
+        padding: 0 35px;
+    }
+
+    .quiz-question{
+        font-size:20px;
+        padding:0;
+    }
 }
